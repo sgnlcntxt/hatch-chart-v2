@@ -13,12 +13,11 @@
 
   <div class="field">
     <%= form.label :bug_id %>
-    <%= form.number_field :bug_id %>
+    <%= form.collection_select :bug_id, Bug.order(:name), :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :fishery_id %>
-    <%= form.number_field :fishery_id %>
+    <%= form.hidden_field :fishery_id, value: @fishery.id %>
   </div>
 
   <div class="field">
