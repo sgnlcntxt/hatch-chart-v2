@@ -16,11 +16,10 @@
   <tbody>
     <% @fisheries.each do |fishery| %>
       <tr>
-        <td><%= fishery.name %></td>
-        <td><%= fishery.photo %></td>
+        <td><%= link_to fishery.name, fishery %></td>
+        <td><%= image_tag fishery.photo, :size => "260x180" %></td>
         <td><%= fishery.location %></td>
         <td><%= fishery.description %></td>
-        <td><%= link_to 'Show', fishery %></td>
         <td><%= link_to 'Edit', edit_fishery_path(fishery) %></td>
         <td><%= link_to 'Destroy', fishery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

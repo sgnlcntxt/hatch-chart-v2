@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @fishery.name %>
-</p>
+</h1>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @fishery.photo %>
+  <%= image_tag @fishery.photo %>
 </p>
 
 <p>
@@ -16,9 +14,37 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @fishery.description %>
 </p>
 
 <%= link_to 'Edit', edit_fishery_path(@fishery) %> |
 <%= link_to 'Back', fisheries_path %>
+
+<h1>Hatches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bug</th>
+      <th></th>
+      <th>Size Range</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fishery.hatches.each do |hatch| %>
+      <tr>
+        <td><%= link_to hatch.bug.name %></td>
+        <td><%= image_tag hatch.bug.photo %>
+        <td><%= hatch.minimum_size %>-<%= hatch.maximum_size %></td>
+        <td><%= hatch.start_month %>/<%= hatch.start_day %></td>
+        <td><%= hatch.end_month %>/<%= hatch.end_day %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "hatches/form", hatch: @fishery.hatches.build %>
