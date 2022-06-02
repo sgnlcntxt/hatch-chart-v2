@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hatches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bug</th>
+      <th>Fishery</th>
+      <th>Minimum size</th>
+      <th>Maximum size</th>
+      <th>Start month</th>
+      <th>Start day</th>
+      <th>End month</th>
+      <th>End day</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hatches.each do |hatch| %>
+      <tr>
+        <td><%= hatch.bug_id %></td>
+        <td><%= hatch.fishery_id %></td>
+        <td><%= hatch.minimum_size %></td>
+        <td><%= hatch.maximum_size %></td>
+        <td><%= hatch.start_month %></td>
+        <td><%= hatch.start_day %></td>
+        <td><%= hatch.end_month %></td>
+        <td><%= hatch.end_day %></td>
+        <td><%= link_to 'Show', hatch %></td>
+        <td><%= link_to 'Edit', edit_hatch_path(hatch) %></td>
+        <td><%= link_to 'Destroy', hatch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hatch', new_hatch_path %>

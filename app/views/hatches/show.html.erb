@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bug:</strong>
+  <%= @hatch.bug_id %>
+</p>
+
+<p>
+  <strong>Fishery:</strong>
+  <%= @hatch.fishery_id %>
+</p>
+
+<p>
+  <strong>Minimum size:</strong>
+  <%= @hatch.minimum_size %>
+</p>
+
+<p>
+  <strong>Maximum size:</strong>
+  <%= @hatch.maximum_size %>
+</p>
+
+<p>
+  <strong>Start month:</strong>
+  <%= @hatch.start_month %>
+</p>
+
+<p>
+  <strong>Start day:</strong>
+  <%= @hatch.start_day %>
+</p>
+
+<p>
+  <strong>End month:</strong>
+  <%= @hatch.end_month %>
+</p>
+
+<p>
+  <strong>End day:</strong>
+  <%= @hatch.end_day %>
+</p>
+
+<%= link_to 'Edit', edit_hatch_path(@hatch) %> |
+<%= link_to 'Back', hatches_path %>

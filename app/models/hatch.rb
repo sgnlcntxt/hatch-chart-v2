@@ -1,0 +1,2 @@
+class Hatch < ApplicationRecord
+end

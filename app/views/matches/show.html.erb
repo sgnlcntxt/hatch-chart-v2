@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fly:</strong>
+  <%= @match.fly_id %>
+</p>
+
+<p>
+  <strong>Bug:</strong>
+  <%= @match.bug_id %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>
