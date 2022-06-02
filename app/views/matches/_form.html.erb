@@ -11,15 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :fly_id %>
-    <%= form.number_field :fly_id %>
-  </div>
+  <% if match.fly_id == nil %>
+    <div class="field">
+      <%= form.label :fly_id %>
+      <%= form.collection_select :fly_id, Fly.order(:name), :id, :name %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.hidden_field :fly_id, value: @fly.id %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= form.label :bug_id %>
-    <%= form.number_field :bug_id %>
-  </div>
+  <% if match.bug_id == nil %>
+    <div class="field">
+      <%= form.label :bug_id %>
+      <%= form.collection_select :bug_id, Bug.order(:name), :id, :name %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.hidden_field :bug_id, value: @bug.id %>
+    </div>
+  <% end %>
+
 
   <div class="actions">
     <%= form.submit %>
