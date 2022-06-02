@@ -1,0 +1,57 @@
+<%= form_with(model: hatch) do |form| %>
+  <% if hatch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hatch.errors.count, "error") %> prohibited this hatch from being saved:</h2>
+
+      <ul>
+        <% hatch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :bug_id %>
+    <%= form.number_field :bug_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fishery_id %>
+    <%= form.number_field :fishery_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minimum_size %>
+    <%= form.text_field :minimum_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maximum_size %>
+    <%= form.text_field :maximum_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_month %>
+    <%= form.number_field :start_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_day %>
+    <%= form.number_field :start_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_month %>
+    <%= form.number_field :end_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_day %>
+    <%= form.number_field :end_day %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

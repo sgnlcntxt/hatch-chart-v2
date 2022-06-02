@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bug_id: 1
+  fishery_id: 1
+  minimum_size: MyString
+  maximum_size: MyString
+  start_month: 1
+  start_day: 1
+  end_month: 1
+  end_day: 1
+
+two:
+  bug_id: 1
+  fishery_id: 1
+  minimum_size: MyString
+  maximum_size: MyString
+  start_month: 1
+  start_day: 1
+  end_month: 1
+  end_day: 1
