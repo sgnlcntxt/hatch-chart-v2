@@ -1,19 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @fly.name %>
-</p>
+</h1>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @fly.photo %>
+  <%= image_tag @fly.photo %>
 </p>
 
-<p>
-  <strong>Description:</strong>
+<h6>
   <%= @fly.description %>
-</p>
+</h6>
 
 <%= link_to 'Edit', edit_fly_path(@fly) %> |
 <%= link_to 'Back', flies_path %>
+
+<h2>
+  Matches
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fly.bugs.each do |fly| %>
+      <tr>
+        <td><%= bug.name %></td>
+        <td><%= image_tag bug.photo, :size => "260x180" %></td>
+        <td><%= bug.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "matches/form", match: @fly.matches.build %>

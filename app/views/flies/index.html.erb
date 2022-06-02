@@ -15,10 +15,9 @@
   <tbody>
     <% @flies.each do |fly| %>
       <tr>
-        <td><%= fly.name %></td>
-        <td><%= fly.photo %></td>
+        <td><%= link_to fly.name, fly %></td>
+        <td><%= image_tag fly.photo, :size => "260x180" %></td>
         <td><%= fly.description %></td>
-        <td><%= link_to 'Show', fly %></td>
         <td><%= link_to 'Edit', edit_fly_path(fly) %></td>
         <td><%= link_to 'Destroy', fly, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
