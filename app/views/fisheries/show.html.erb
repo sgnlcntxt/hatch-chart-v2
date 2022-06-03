@@ -37,8 +37,8 @@
   <tbody>
     <% @fishery.hatches.each do |hatch| %>
       <tr>
-        <td><%= link_to hatch.bug.name %></td>
-        <td><%= image_tag hatch.bug.photo %>
+        <td><%= link_to hatch.bug.name, bug_url(hatch.bug) %></td>
+        <td><%= image_tag hatch.bug.photo, :size => "260x180" %>
         <td><%= hatch.minimum_size %>-<%= hatch.maximum_size %></td>
         <td><%= hatch.start_month %>/<%= hatch.start_day %></td>
         <td><%= hatch.end_month %>/<%= hatch.end_day %></td>

@@ -1,15 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: %i[ show edit update destroy ]
 
-  # GET /matches or /matches.json
-  def index
-    @matches = Match.all
-  end
-
-  # GET /matches/1 or /matches/1.json
-  def show
-  end
-
   # GET /matches/new
   def new
     @match = Match.new
@@ -25,7 +16,7 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @match.save
-        format.html { redirect_to match_url(@match), notice: "Match was successfully created." }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render :show, status: :created, location: @match }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +29,7 @@ class MatchesController < ApplicationController
   def update
     respond_to do |format|
       if @match.update(match_params)
-        format.html { redirect_to match_url(@match), notice: "Match was successfully updated." }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render :show, status: :ok, location: @match }
       else
         format.html { render :edit, status: :unprocessable_entity }
