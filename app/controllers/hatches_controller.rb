@@ -2,13 +2,8 @@ class HatchesController < ApplicationController
   before_action :set_hatch, only: %i[ show edit update destroy ]
 
   # GET /hatches or /hatches.json
-  def index
-    @hatches = Hatch.all
-  end
 
   # GET /hatches/1 or /hatches/1.json
-  def show
-  end
 
   # GET /hatches/new
   def new
@@ -25,7 +20,7 @@ class HatchesController < ApplicationController
 
     respond_to do |format|
       if @hatch.save
-        format.html { redirect_to hatch_url(@hatch), notice: "Hatch was successfully created." }
+        format.html { redirect_to fishery_url(@hatch.fishery_id), notice: "Hatch was successfully created." }
         format.json { render :show, status: :created, location: @hatch }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +33,7 @@ class HatchesController < ApplicationController
   def update
     respond_to do |format|
       if @hatch.update(hatch_params)
-        format.html { redirect_to hatch_url(@hatch), notice: "Hatch was successfully updated." }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render :show, status: :ok, location: @hatch }
       else
         format.html { render :edit, status: :unprocessable_entity }
