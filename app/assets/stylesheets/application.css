@@ -18,3 +18,7 @@
 	margin: 0 auto !important; 
 	float: none !important; 
 }
+
+th, td {
+  padding: 15px;
+}
